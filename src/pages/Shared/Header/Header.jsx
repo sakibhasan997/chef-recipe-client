@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     return (
         <div className='pt-5'>
-            <div className="navbar bg-white my-container px-3 rounded-lg shadow-xl">
+            <div className="navbar bg-white my-container px-3 rounded-lg shadow-2xl">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
