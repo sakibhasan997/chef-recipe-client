@@ -21,14 +21,14 @@ const Header = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-2  ">
-                        <Link to='/' className='px-2 font-semibold text-lg' >HOME</Link>
-                        <Link to='/' className='px-2 font-semibold text-lg' >BLOGS</Link>
-                        <Link to='/' className='px-2 font-semibold text-lg' >ABOUT</Link>
+                        <Link to='/' className='px-2 font-semibold text-lg hover:text-yellow-500' >HOME</Link>
+                        <Link to='/' className='px-2 font-semibold text-lg hover:text-yellow-500' >BLOGS</Link>
+                        <Link to='/' className='px-2 font-semibold text-lg hover:text-yellow-500' >ABOUT</Link>
                     </ul>
                 </div>
 
                 <div className="navbar-end">
-                    <a className="btn">Login</a>
+                    <a className="btn btn-warning">Login</a>
                 </div>
                 <br />
                 <div className='ms-5'>

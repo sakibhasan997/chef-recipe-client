@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../pages/Shared/Header/Header';
 import { Outlet } from 'react-router-dom';
 import Banner from '../pages/Shared/Banner/Banner';
+import Footer from '../pages/Home/Footer/Footer';
 
 const Main = () => {
     return (
@@ -21,7 +22,7 @@ const Main = () => {
                     <Outlet />
                 </div>
                 <div className="footer">
-
+                    <Footer/>
                 </div>
             </div>
         </>
