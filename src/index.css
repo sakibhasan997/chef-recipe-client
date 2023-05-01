@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.bg-banner{
+    min-width: 100vh;
+    min-height: 100vh;
+    background-image: linear-gradient( rgb(15 15 15 / 21%), rgb(26 26 24 / 68%)), url(/public/site-img/pexels-tanya-gorelova-3933207.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}

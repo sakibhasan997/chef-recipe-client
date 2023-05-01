@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <>
-            <div className="navbar bg-transparent my-container">
+        <div className='pt-5'>
+            <div className="navbar bg-white my-container px-3 rounded-lg shadow-xl">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -17,7 +17,7 @@ const Header = () => {
                             <Link to='/' >ABOUT</Link>
                         </ul>
                     </div>
-                    <img className='w-32' src="/public/site-logo/site-logo.jpg" alt="" />
+                    <img className='w-32' src="/public/site-logo/04_main_home (2).jpg" alt="" />
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-2  ">
@@ -36,7 +36,7 @@ const Header = () => {
                 </div>
 
             </div>
-        </>
+        </div>
     );
 };
 
