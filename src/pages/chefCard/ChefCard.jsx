@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaThumbsUp } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const ChefCard = ({ recipe }) => {
     const { id, name, picture, category, yearsOfExperience, bio, numberOfRecipes, likes, description, numberOfRecipesId, rating } = recipe;
@@ -15,7 +16,7 @@ const ChefCard = ({ recipe }) => {
                         <p> Recipes: {numberOfRecipes}</p>
                         <p className='flex gap-2'> <FaThumbsUp/> {likes}</p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-warning text-white">View Recipes</button>
+                        <Link to={`/recipes/${id}`}><button className="btn btn-warning text-white">View Recipes</button></Link> 
                         </div>
                     </div>
                 </div>
