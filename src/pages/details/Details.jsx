@@ -21,7 +21,7 @@ const Details = () => {
                         <p>Number: {numberOfRecipes}</p>
                         <p>Experience: {yearsOfExperience}</p>
                         <div className="card-actions justify-end">
-                            <Link to='/'><button className="btn btn-warning">See All</button></Link>
+                            <Link to='/'><button className="btn btn-warning">Favorite</button></Link>
                         </div>
                     </div>
                 </div>

@@ -6,7 +6,7 @@ const Footer = () => {
             <div className="main my-container">
                 <div className="footer-header grid grid-cols-2 lg:grid-cols-5 gap-8 text-gray-50 mb-10 mt-32">
                     <div>
-                        <h2 className='font-bold text-3xl '>Chef Recipe</h2>
+                        <h2 className='font-bold text-3xl text-yellow-400'>Chef Recipe</h2>
                         <br />
                         <p className='font-normal text-base text-[#757575]'>A skilled culinary professional who specializes in food preparation, cooking, and presentation. A chef has a strong knowledge of cooking techniques and methods, as well as ingredients and their uses in different dishes. Creativity is essential, with the ability to develop unique recipes and adapt menus to suit changing customer preferences. </p>
                         <br />

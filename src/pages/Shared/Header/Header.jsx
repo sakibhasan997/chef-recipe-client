@@ -1,11 +1,11 @@
 import React from 'react';
 import { FaUserCircle } from "react-icons/fa";
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
         <div className='pt-5'>
-            <div className="navbar bg-white my-container px-3 rounded-lg shadow-2xl">
+            <div className="navbar bg-white my-container px-3 rounded-lg shadow-xl">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -26,10 +26,11 @@ const Header = () => {
                         <NavLink to='/about' className='px-2 font-semibold text-lg hover:text-yellow-500' >ABOUT</NavLink>
                     </ul>
                 </div>
-
-                <div className="navbar-end">
-                    <a className="btn btn-warning">Login</a>
-                </div>
+                
+                    <div className="navbar-end">
+                        <Link to='/login' className="btn btn-warning">Login</Link>
+                    </div>
+                
                 <br />
                 <div className='ms-5'>
                     <FaUserCircle className='text-[45px]' />

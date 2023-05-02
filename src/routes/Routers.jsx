@@ -11,8 +11,12 @@ import Blog from "../pages/Blogs/Blog";
 import Blogs from "../layout/Blogs";
 import About from "../pages/About/about";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import UserLogin from "../layout/UserLogin";
+import Login from "../pages/UserAuth/Login/Login";
+import Register from "../pages/UserAuth/Register/Register";
 
   const router = createBrowserRouter([
+    
     {
       path: "/",
       element: <Main/>,
@@ -39,6 +43,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
         
       ]
     },
+    
     {
       path: '/',
       element: <Blogs/>,
@@ -53,7 +58,21 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
           element: <About/>
         }
       ]
-    }
+    },
+    {
+      path: '/',
+      element: <UserLogin/>,
+      children: [
+        {
+          path: '/login',
+          element: <Login/>
+        },
+        {
+          path: '/register',
+          element: <Register/>
+        },
+      ]
+    },
   ]);
 
   export default router;
