@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
@@ -31,6 +32,10 @@ const Login = () => {
                                 {/* <div className="form-control mt-6"> */}
                                     <button  className="btn btn-warning mt-6" type="submit">Login</button>
                                 {/* </div> */}
+                                <div className='my-5 mx-auto'>
+                                    <button className='btn mb-2 btn-outline btn-primary flex gap-2 items-center'><FaGoogle/> Google SignIn</button>
+                                    <button className='btn btn-outline flex gap-2 items-center '><FaGithub/> GitHub SingIn</button>
+                                </div>
                                 <p className='mt-5'>Don't Have an Account? <Link className='link-hover text-yellow-600' to='/register'>Register</Link> </p>
                             </div>
                         </div>

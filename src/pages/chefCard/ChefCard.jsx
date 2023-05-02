@@ -15,7 +15,7 @@ const ChefCard = ({ recipe }) => {
                         <hr />
                         <p>Years Of Experience: {yearsOfExperience}</p>
                         <p> Recipes: {numberOfRecipes}</p>
-                        <p className='flex gap-2'> <FaThumbsUp /> {likes}</p>
+                        <p className='flex items-center gap-2'> <FaThumbsUp className='text-primary' /> {likes}</p>
                         <div className="card-actions justify-between items-center">
                             <div>
                                 <Rating

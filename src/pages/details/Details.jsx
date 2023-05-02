@@ -15,7 +15,7 @@ const Details = () => {
                         <h2 className="card-title text-3xl font-semibold">Name: {name}</h2>
                         <hr />
                         <p className='text-lg font-medium'>Short Bio: {bio}</p>
-                        <p>Description: {description}</p>
+                        <p> <span className='text-lg font-medium '>Description:</span> {description}</p>
                         <hr />
                         <p className='flex gap-2'> <FaThumbsUp className='text-primary' /> {likes}</p>
                         <p>Number: {numberOfRecipes}</p>
