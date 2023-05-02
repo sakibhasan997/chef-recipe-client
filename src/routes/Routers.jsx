@@ -7,28 +7,51 @@ import Home from "../pages/Home/Home/Home";
 import ChefCategory from "../layout/ChefCategory";
 import RecipeCard from "../pages/chefCard/RecipeCard";
 import Details from "../pages/details/Details";
+import Blog from "../pages/Blogs/Blog";
+import Blogs from "../layout/Blogs";
+import About from "../pages/About/about";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Main/>,
+      errorElement: <ErrorPage/>,
       children: [
         {
           path: '/',
           element: <Home/>
         },
-
+      
       ]
     },
+   
     {
       path: '/recipes',
       element: <ChefCategory/>,
+      errorElement: <ErrorPage/>,
       children:[
         {
           path: ':id',
           element: <Details/>,
           loader: ({params}) => fetch (`http://localhost:3000/recipes/${params.id}`)
         },
+        
+      ]
+    },
+    {
+      path: '/',
+      element: <Blogs/>,
+      errorElement: <ErrorPage/>,
+      children: [
+        {
+          path: '/blogs',
+          element: <Blog/>
+        },
+        {
+          path: '/about',
+          element: <About/>
+        }
       ]
     }
   ]);

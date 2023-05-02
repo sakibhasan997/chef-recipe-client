@@ -21,3 +21,6 @@
 .footer{
     background-color: black;
 }
+ul a.active{
+    color: yellow;
+}
