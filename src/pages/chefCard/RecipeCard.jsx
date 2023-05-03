@@ -18,7 +18,7 @@ const RecipeCard = () => {
             <h2 className='text-center text-3xl font-semibold '>Our <span className='text-yellow-500'>Chefs</span></h2>
             <br />
             <hr />
-            <div className=' my-container grid grid-cols-2 lg:grid-cols-3 gap-5 my-12'>
+            <div className=' my-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-12'>
             {
                 recipes?.map((recipe) => <ChefCard key={recipe?.id} recipe={recipe}/>)
             }
