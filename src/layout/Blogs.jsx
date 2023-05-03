@@ -6,7 +6,10 @@ import { Outlet } from 'react-router-dom';
 const Blogs = () => {
     return (
         <div>
-            <Header />
+            <div className="header bg-blue-100 py-10">
+                <Header />
+                <h1  className='font-bold mt-5 text-3xl text-[#1A1919] text-center'>Question & Answer</h1>
+            </div>
             <Outlet />
             <div className='footer'>
                 <Footer />

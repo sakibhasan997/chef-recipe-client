@@ -1,11 +1,19 @@
 import React from 'react';
+import Pdf from "react-to-pdf";
 
+const ref = React.createRef();
 const Blog = () => {
+    
     return (
         <div className=''>
-            <div className="header bg-blue-100 py-14">
-                <h1 className='font-bold text-3xl text-[#1A1919] text-center'>Question & Answer</h1>
+            
+
+            <div className='my-container flex justify-end  mt-6'>
+                <Pdf targetRef={ref} filename="code-example.pdf">
+                    {({ toPdf }) => <button onClick={toPdf} className='btn  btn-warning' >Download Pdf</button>}
+                </Pdf>
             </div>
+
             <div className='my-container my-16'>
                 <div className=' border-2 p-8 rounded-xl my-5  shadow-lg '>
                     <h1 className='text-xl font-bold'>What is differences between uncontrolled and controlled components.?</h1>
@@ -45,6 +53,23 @@ const Blog = () => {
                     </p>
                 </div>
             </div>
+
+
+            <div className='my-container ' ref={ref}>
+                <div className="card w-96 mx-auto bg-base-100 shadow-xl">
+                    <figure className="px-10 pt-10">
+                        <img className='w-96 rounded-xl' src="/public/site-img/DetailsBanner.jpg" alt="" />
+                    </figure>
+                    <div className="card-body items-center text-center">
+                        <h2 className="card-title">Shoes!</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div className="card-actions">
+                            <button className="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     );
 };

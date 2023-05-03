@@ -77,6 +77,15 @@ const Details = () => {
                             <p>heap into electronic type setting</p>
                         </div>
                     </div>
+                    <div className='flex items-center gap-4 my-5'>
+                        <div>
+                            <img className='w-32' src="/public/site-img/DetailsBanner.jpg" alt="" />
+                        </div>
+                        <div>
+                            <h2 className='text-xl font-semibold'>Recipe Title Here</h2>
+                            <p>heap into electronic type setting</p>
+                        </div>
+                    </div>
                     <hr />
                     <div className='flex items-center gap-4 my-5'>
                         <div>

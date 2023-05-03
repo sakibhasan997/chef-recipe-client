@@ -26,7 +26,7 @@ const ChefCard = ({ recipe }) => {
                                 />
                                 <span>{rating}</span>
                             </div>
-                            <Link to={`/recipes/${id}`}><button className="btn btn-warning text-white">View Recipes</button></Link>
+                            <Link to={`/recipes/${id}`}><button className="btn btn-outline btn-warning text-white">View Recipes</button></Link>
                         </div>
                     </div>
                 </div>
