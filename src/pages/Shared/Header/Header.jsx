@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaUserCircle } from "react-icons/fa";
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
+
     return (
         <div className='pt-5'>
             <div className="navbar bg-white my-container px-3 rounded-lg shadow-xl">
@@ -26,15 +35,21 @@ const Header = () => {
                         <NavLink to='/about' className='px-2 font-semibold text-lg hover:text-yellow-500' >ABOUT</NavLink>
                     </ul>
                 </div>
-                
-                    <div className="navbar-end">
-                        <Link to='/login' className="btn btn-warning">Login</Link>
-                    </div>
-                
+
+
+                <div className="navbar-end">
+                   {user ? 
+                    <button onClick={handleLogOut} className="btn btn-warning" >LogOut</button>:
+                    <Link to='/login' className="btn btn-warning">Login</Link>
+                   }
+                </div>
+
                 <br />
-                <div className='ms-5'>
+                {
+                    user && <div className='ms-5'>
                     <FaUserCircle className='text-[45px]' />
                 </div>
+                }
 
             </div>
         </div>

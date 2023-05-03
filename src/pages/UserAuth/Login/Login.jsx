@@ -1,16 +1,52 @@
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import app from '../../../firebase/firebase';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 
 const Login = () => {
-    const auth = getAuth(app);
+    const {user, gProvider,gitProvider,createLogin} = useContext(AuthContext)
+    
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '';
 
-    const googleProvider = new GoogleAuthProvider();
+    const handleLogin =(e)=>{
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+
+        createLogin(email, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            console.log(user);
+            form.reset();
+            navigate(from, { replace: true })
+          })
+          .catch((error) => {
+            const errorMessage = error.message;
+            console.log(errorMessage);
+          });    
+    }
+
     const handleGoogle = ()=>{
-        signInWithPopup(auth, googleProvider)
+        gProvider()
+        .then(result =>{
+            const loggedUser = result.user;
+            console.log(loggedUser);
+        })
+        .catch(error =>{
+            const errorMessage = error.message;
+            console.log(errorMessage);
+        })
+    }
+
+    const handleGithub = () =>{
+        gitProvider()
         .then(result =>{
             const loggedUser = result.user;
             console.log(loggedUser);
@@ -31,7 +67,8 @@ const Login = () => {
                             <h1 className="text-5xl font-bold">Please Login Now!</h1>
 
                         </div>
-                        <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100 py-10">
+                       <Form onSubmit={handleLogin}>
+                       <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100 py-10">
                             <div className="card-body">
                                 <div className="form-control">
                                     <label className="label">
@@ -50,11 +87,12 @@ const Login = () => {
                                 {/* </div> */}
                                 <div className='my-5 mx-auto'>
                                     <button onClick={handleGoogle} className='btn mb-2 btn-outline btn-primary flex gap-2 items-center'><FaGoogle /> Google SignIn</button>
-                                    <button className='btn btn-outline flex gap-2 items-center '><FaGithub /> GitHub SingIn</button>
+                                    <button onClick={handleGithub} className='btn btn-outline flex gap-2 items-center '><FaGithub /> GitHub SingIn</button>
                                 </div>
                                 <p className='mt-5'>Don't Have an Account? <Link className='link-hover text-yellow-600' to='/register'>Register</Link> </p>
                             </div>
                         </div>
+                       </Form>
                     </div>
 
                 </div>

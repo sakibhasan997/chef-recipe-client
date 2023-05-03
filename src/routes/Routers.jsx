@@ -14,6 +14,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import UserLogin from "../layout/UserLogin";
 import Login from "../pages/UserAuth/Login/Login";
 import Register from "../pages/UserAuth/Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
   const router = createBrowserRouter([
     
@@ -37,7 +38,7 @@ import Register from "../pages/UserAuth/Register/Register";
       children:[
         {
           path: ':id',
-          element: <Details/>,
+          element: <PrivateRoute><Details/></PrivateRoute>,
           loader: ({params}) => fetch (`http://localhost:3000/recipes/${params.id}`)
         },
         
