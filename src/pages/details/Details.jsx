@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaArrowAltCircleDown, FaArrowAltCircleRight, FaSearch, FaThumbsUp } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Details = () => {
+    const [disable, setDisable] = useState(false);
+    const handleFavorite = () => {
+        toast('Item Added Successfully')
+        setDisable(true)
+    }
+
 
     const details = useLoaderData();
     const { id, name, picture, category, yearsOfExperience, bio, numberOfRecipes, likes, description, numberOfRecipesId, rating } = details;
@@ -21,7 +29,7 @@ const Details = () => {
                         <p>Number: {numberOfRecipes}</p>
                         <p>Experience: {yearsOfExperience}</p>
                         <div className="card-actions justify-end">
-                            <Link to='/'><button className="btn btn-warning">Favorite</button></Link>
+                            <button onClick={handleFavorite} disabled={disable} className="btn btn-warning">Favorite</button>
                         </div>
                     </div>
                 </div>
@@ -95,6 +103,7 @@ const Details = () => {
                     <img src="/public/latesImg/06_recipe_details (2).jpg" alt="" />
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };
