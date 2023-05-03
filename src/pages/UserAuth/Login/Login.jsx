@@ -1,9 +1,11 @@
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import app from '../../../firebase/firebase';
 import { AuthContext } from '../../../providers/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
@@ -12,6 +14,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '';
+    const [error, setError] = useState('');
 
     const handleLogin =(e)=>{
         e.preventDefault();
@@ -25,11 +28,13 @@ const Login = () => {
             const user = userCredential.user;
             console.log(user);
             form.reset();
+            setError('')
+            toast('your password is successful')
             navigate(from, { replace: true })
           })
           .catch((error) => {
             const errorMessage = error.message;
-            console.log(errorMessage);
+            setError(errorMessage)
           });    
     }
 
@@ -70,6 +75,7 @@ const Login = () => {
                        <Form onSubmit={handleLogin}>
                        <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100 py-10">
                             <div className="card-body">
+                                <p className='text-red-600'>{error}</p>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Email</span>
@@ -97,6 +103,7 @@ const Login = () => {
 
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };

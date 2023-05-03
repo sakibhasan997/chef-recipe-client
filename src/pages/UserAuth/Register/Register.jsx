@@ -1,12 +1,19 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Form, Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { FaCheck } from 'react-icons/fa';
 
 const Register = () => {
-    const {createRegister} = useContext(AuthContext);
+    const { createRegister } = useContext(AuthContext);
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('')
 
     const handleRegister = (e) => {
         e.preventDefault();
+        setSuccess('');
+        setError('');
         const form = e.target;
         const name = form.name.value;
         const photo = form.photo.value;
@@ -14,17 +21,24 @@ const Register = () => {
         const password = form.password.value;
         console.log(name, photo, email, password);
 
-      
-            createRegister(email, password)
+        if (!/(?=.*[A-Z].*[0-9])/.test(password)) {
+            setError('Please add at least one uppercase and two numbers');
+            return;
+        }
+
+        createRegister(email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
                 console.log(user);
                 form.reset();
-              })
-              .catch((error) => {
+                setError('')
+                toast('Your Auth is successful');
+                setSuccess(  'Your Auth is successful')
+            })
+            .catch((error) => {
                 const errorMessage = error.message;
-                console.log(errorMessage);
-              });
+                setError(errorMessage);
+            });
 
     }
 
@@ -37,9 +51,11 @@ const Register = () => {
                         <h1 className="text-5xl font-bold">Please Register Now!</h1>
 
                     </div>
-                    <Form onSubmit={handleRegister }>
+                    <Form onSubmit={handleRegister}>
                         <div className="card flex-shrink-0 w-full shadow-2xl bg-base-100 py-10">
                             <div className="card-body">
+                                <p className='text-red-600'>{error}</p>
+                                <p className='text-success'>{success}</p>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Name</span>
@@ -73,6 +89,7 @@ const Register = () => {
                     </Form>
                 </div>
 
+                <ToastContainer />
             </div>
         </>
     );
