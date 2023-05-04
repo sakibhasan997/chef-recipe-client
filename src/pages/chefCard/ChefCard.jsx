@@ -2,6 +2,7 @@ import React from 'react';
 import { FaRegStar, FaStar, FaThumbsUp } from 'react-icons/fa';
 import Rating from 'react-rating';
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazy-load';
 
 const ChefCard = ({ recipe }) => {
     const { id, name, picture, category, yearsOfExperience, bio, numberOfRecipes, likes, description, numberOfRecipesId, rating } = recipe;
@@ -9,7 +10,11 @@ const ChefCard = ({ recipe }) => {
         <div className='w-full '>
             <div>
                 <div className="card w-full bg-base-100 shadow-xl">
-                    <figure> <img className='h-64 w-full object-cover' src={picture} alt="Shoes" /></figure>
+                    
+                        <LazyLoad>
+                            <figure><img className='h-64 w-full object-cover' src={picture} alt="Shoes" /> </figure>
+                        </LazyLoad>
+                   
                     <div className="card-body">
                         <h2 className="card-title text-xl font-semibold">Name: {name}</h2>
                         <hr />

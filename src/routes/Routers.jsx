@@ -41,7 +41,7 @@ import PrivateRoute from "./PrivateRoute";
         {
           path: ':id',
           element: <PrivateRoute><Details/></PrivateRoute>,
-          loader: ({params}) => fetch (`http://localhost:3000/recipes/${params.id}`)
+          loader: ({params}) => fetch (`https://assignment-10-server-site-sakibhasan997.vercel.app/recipes/${params.id}`)
         },
         
       ]

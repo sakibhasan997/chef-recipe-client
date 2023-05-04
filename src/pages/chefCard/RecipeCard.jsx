@@ -7,7 +7,7 @@ const RecipeCard = () => {
     const [recipes, setRecipes] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:3000/recipes')
+        fetch('https://assignment-10-server-site-sakibhasan997.vercel.app/recipes')
         .then(res => res.json())
         .then(data => setRecipes(data))
         // console.log(recipes);

@@ -38,17 +38,20 @@ const Header = () => {
 
 
                 <div className="navbar-end">
-                   {user ? 
-                    <button onClick={handleLogOut} className="btn btn-warning" >LogOut</button>:
-                    <Link to='/login' className="btn btn-warning">Login</Link>
-                   }
+                    {user ?
+                        <>
+                            <button title='helle bro' onClick={handleLogOut} className="btn btn-warning" >LogOut</button>
+                        </>
+                        :
+                        <Link  to='/login' className="btn btn-warning">Login</Link>
+                    }
                 </div>
 
                 <br />
                 {
                     user && <div className='ms-5'>
-                    <FaUserCircle className='text-[45px]' />
-                </div>
+                       <button> <FaUserCircle title={user.displayName} className='text-[45px]' /></button>
+                    </div>
                 }
 
             </div>

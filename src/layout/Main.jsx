@@ -4,27 +4,30 @@ import { Outlet } from 'react-router-dom';
 import Banner from '../pages/Shared/Banner/Banner';
 import Footer from '../pages/Home/Footer/Footer';
 
+
 const Main = () => {
     return (
         <>
-            <div className='main'>
-                <div className="bg-banner">
-                    <div>
+            
+                <div className='main'>
+                    <div className="bg-banner">
                         <div>
-                            <Header />
-                        </div>
-                        <div>
-                            <Banner/>
+                            <div>
+                                <Header />
+                            </div>
+                            <div>
+                                <Banner />
+                            </div>
                         </div>
                     </div>
+                    <div>
+                        <Outlet />
+                    </div>
+                    <div className="footer">
+                        <Footer />
+                    </div>
                 </div>
-                <div>
-                    <Outlet />
-                </div>
-                <div className="footer">
-                    <Footer/>
-                </div>
-            </div>
+            
         </>
     );
 };

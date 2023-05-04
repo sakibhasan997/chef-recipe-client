@@ -4,13 +4,17 @@ import { AuthContext } from '../../../providers/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaCheck } from 'react-icons/fa';
+import { getAuth, updateProfile } from 'firebase/auth';
+import app from '../../../firebase/firebase';
 
+const auth = getAuth(app)
 const Register = () => {
-    const { createRegister } = useContext(AuthContext);
+    const { createRegister, updateUser, user } = useContext(AuthContext);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('')
 
     const handleRegister = (e) => {
+
         e.preventDefault();
         setSuccess('');
         setError('');
@@ -21,8 +25,8 @@ const Register = () => {
         const password = form.password.value;
         console.log(name, photo, email, password);
 
-        if (!/(?=.*[A-Z].*[0-9])/.test(password)) {
-            setError('Please add at least one uppercase and two numbers');
+        if (!/(?=.*[A-Z])/.test(password)) {
+            setError('Please add at least one uppercase ');
             return;
         }
 
@@ -33,15 +37,28 @@ const Register = () => {
                 form.reset();
                 setError('')
                 toast('Your Auth is successful');
-                setSuccess(  'Your Auth is successful')
+                setSuccess('Your Auth is successful')
+                updateUserData(user, name)
             })
             .catch((error) => {
                 const errorMessage = error.message;
                 setError(errorMessage);
             });
 
-    }
+        // update profile
+        const updateUserData = (user, name) => {
+            updateProfile(user, {
+                displayName: name
+            })
+                .then(() => {
+                    // Profile updated!
+                    // ...
+                }).catch((error) => {
+                    setError(error.message)
+                });
+        }
 
+    }
 
     return (
         <>
