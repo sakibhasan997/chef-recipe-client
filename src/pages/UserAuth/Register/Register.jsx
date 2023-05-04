@@ -38,7 +38,7 @@ const Register = () => {
                 setError('')
                 toast('Your Auth is successful');
                 setSuccess('Your Auth is successful')
-                updateUserData(user, name)
+                updateUserData(user, name, photo)
             })
             .catch((error) => {
                 const errorMessage = error.message;
@@ -46,9 +46,10 @@ const Register = () => {
             });
 
         // update profile
-        const updateUserData = (user, name) => {
+        const updateUserData = (user, name, photo) => {
             updateProfile(user, {
-                displayName: name
+                displayName: name,
+                photoUR: photo
             })
                 .then(() => {
                     // Profile updated!

@@ -14,6 +14,7 @@ const Details = () => {
 
     const details = useLoaderData();
     const { id, name, picture, category, yearsOfExperience, bio, numberOfRecipes, likes, description, numberOfRecipesId, rating } = details;
+    
     return (
         <div className='my-container  my-16 grid grid-cols-1 md:grid-cols-3 gap-5'>
             <div className='col-span-2'>

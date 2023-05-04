@@ -40,7 +40,7 @@ const Header = () => {
                 <div className="navbar-end">
                     {user ?
                         <>
-                            <button title='helle bro' onClick={handleLogOut} className="btn btn-warning" >LogOut</button>
+                            <button title='helle bro' onClick={handleLogOut} className="btn btn-warning" >Log Out</button>
                         </>
                         :
                         <Link  to='/login' className="btn btn-warning">Login</Link>
@@ -49,8 +49,8 @@ const Header = () => {
 
                 <br />
                 {
-                    user && <div className='ms-5'>
-                       <button> <FaUserCircle title={user.displayName} className='text-[45px]' /></button>
+                    user && <div className='ms-5 w-[55px] h-[55px]'> 
+                       <button> <img src={user.photoURL} title={user.displayName}  className='text-[45px] w-[45px] h-[45px]  rounded-full bg-black' /></button>
                     </div>
                 }
 
