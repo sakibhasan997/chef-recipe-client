@@ -6,7 +6,7 @@
 .bg-banner{
     /* min-width: 100vh; */
     min-height: 100vh;
-    background-image: linear-gradient( rgba(15, 15, 15, 0.384), rgba(26, 26, 24, 0.788)), url(/public/site-img/pexels-tanya-gorelova-3933207.jpg);
+    background-image: linear-gradient( rgba(15, 15, 15, 0.384), rgba(26, 26, 24, 0.788)), url(/public/assets/site-img/pexels-tanya-gorelova-3933207.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: cover;

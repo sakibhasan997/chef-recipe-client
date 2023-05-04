@@ -9,21 +9,21 @@ const ExtraSection = () => {
             <br />
             <div className='grid grid-cols-1 md:grid-cols-3 mx-auto'>
                 <div className='mx-auto'>
-                    <img src="/public//OurChefImg/04_main_home (4).jpg" alt="" />
+                    <img src="/public/assets/OurChefImg/04_main_home (4).jpg" alt="" />
                     <div className='bg-slate-100 py-5 mx-auto text-center'>
                         <h2 className='text-xl font-semibold'>Monali Rose</h2>
                         <p>Head Chef</p>
                     </div>
                 </div>
                 <div className='mx-auto'>
-                    <img src="/public//OurChefImg/04_main_home (5).jpg" alt="" />
+                    <img src="/public/assets/OurChefImg/04_main_home (5).jpg" alt="" />
                     <div className='bg-yellow-500 text-white py-5 mx-auto text-center'>
                         <h2 className='text-xl font-semibold'>Kazi Fahim</h2>
                         <p>Head Chef</p>
                     </div>
                 </div>
                 <div className='mx-auto'>
-                    <img src="/public//OurChefImg/04_main_home (7).jpg" alt="" />
+                    <img src="/public/assets/OurChefImg/04_main_home (7).jpg" alt="" />
                     <div className='bg-slate-100 py-5 mx-auto text-center'>
                         <h2 className='text-xl font-semibold'>Jerin Jara</h2>
                         <p>Head Chef</p>

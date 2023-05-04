@@ -61,7 +61,7 @@ const Details = () => {
                     <hr className=' w-full h-1 bg-yellow-500' />
                     <div className='flex items-center gap-4 my-5'>
                         <div>
-                            <img className='w-32' src="/public/latesImg/basic-congee-recipes-4065244-hero-01-5cf81547c34d4520be10bb57c6cda902.jpg" alt="" />
+                            <img className='w-32' src="/public/assets/latesImg/oyakodon-japanese-chicken-and-egg-rice-bowl-recipe-hero-f2d42cfe8e8e4436b97d6e79d038d9bc.jpeg" alt="" />
                         </div>
                         <div>
                             <h2 className='text-xl font-semibold'>Recipe Title Here</h2>
@@ -71,7 +71,7 @@ const Details = () => {
                     <hr />
                     <div className='flex items-center gap-4 my-5'>
                         <div>
-                            <img className='w-32' src="/public/latesImg/easy-dinner-recipes-pizza-casserole-1676054902.jpeg" alt="" />
+                            <img className='w-32' src="/public/assets/latesImg/easy-dinner-recipes-pizza-casserole-1676054902.jpeg" alt="" />
                         </div>
                         <div>
                             <h2 className='text-xl font-semibold'>Recipe Title Here</h2>
@@ -80,17 +80,7 @@ const Details = () => {
                     </div>
                     <div className='flex items-center gap-4 my-5'>
                         <div>
-                            <img className='w-32' src="/public/site-img/DetailsBanner.jpg" alt="" />
-                        </div>
-                        <div>
-                            <h2 className='text-xl font-semibold'>Recipe Title Here</h2>
-                            <p>heap into electronic type setting</p>
-                        </div>
-                    </div>
-                    <hr />
-                    <div className='flex items-center gap-4 my-5'>
-                        <div>
-                            <img className='w-32' src="/public/latesImg/fruit-custard-recipe.jpg" alt="" />
+                            <img className='w-32' src="/public/assets/site-img/DetailsBanner.jpg" alt="" />
                         </div>
                         <div>
                             <h2 className='text-xl font-semibold'>Recipe Title Here</h2>
@@ -100,7 +90,17 @@ const Details = () => {
                     <hr />
                     <div className='flex items-center gap-4 my-5'>
                         <div>
-                            <img className='w-32' src="/public/latesImg/oyakodon-japanese-chicken-and-egg-rice-bowl-recipe-hero-f2d42cfe8e8e4436b97d6e79d038d9bc.jpeg" alt="" />
+                            <img className='w-32' src="/public/assets/latesImg/fruit-custard-recipe.jpg" alt="" />
+                        </div>
+                        <div>
+                            <h2 className='text-xl font-semibold'>Recipe Title Here</h2>
+                            <p>heap into electronic type setting</p>
+                        </div>
+                    </div>
+                    <hr />
+                    <div className='flex items-center gap-4 my-5'>
+                        <div>
+                            <img className='w-32' src="/public/assets/latesImg/basic-congee-recipes-4065244-hero-01-5cf81547c34d4520be10bb57c6cda902.jpg" alt="" />
                         </div>
                         <div>
                             <h2 className='text-xl font-semibold'>Recipe Title Here</h2>
@@ -110,7 +110,7 @@ const Details = () => {
                 </div>
 
                 <div>
-                    <img src="/public/latesImg/06_recipe_details (2).jpg" alt="" />
+                    <img src="/public/assets/latesImg/06_recipe_details (2).jpg" alt="" />
                 </div>
             </div>
             <ToastContainer />

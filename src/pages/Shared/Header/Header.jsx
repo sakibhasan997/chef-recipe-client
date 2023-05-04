@@ -26,7 +26,7 @@ const Header = () => {
                             <NavLink to='/about' >ABOUT</NavLink>
                         </ul>
                     </div>
-                    <img className='w-32' src="/public/site-logo/04_main_home (2).jpg" alt="" />
+                    <img className='w-32' src="/public/assets/site-logo/04_main_home (2).jpg" alt="" />
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-2  ">

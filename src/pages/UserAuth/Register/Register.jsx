@@ -33,12 +33,12 @@ const Register = () => {
         createRegister(email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
+                updateProfile(user, {displayName: name, photoURL: photo})
                 console.log(user);
                 form.reset();
                 setError('')
                 toast('Your Auth is successful');
                 setSuccess('Your Auth is successful')
-                updateUserData(user, name, photo)
             })
             .catch((error) => {
                 const errorMessage = error.message;
@@ -46,18 +46,7 @@ const Register = () => {
             });
 
         // update profile
-        const updateUserData = (user, name, photo) => {
-            updateProfile(user, {
-                displayName: name,
-                photoUR: photo
-            })
-                .then(() => {
-                    // Profile updated!
-                    // ...
-                }).catch((error) => {
-                    setError(error.message)
-                });
-        }
+        
 
     }
 

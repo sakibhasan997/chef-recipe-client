@@ -13,7 +13,7 @@ const Banner = () => {
                 </div>
                 <div className='mx-auto'>
                     <LazyLoad fallback='loading...'>
-                        <img className=' h-[290px]  md:h-[625px] mt-[100px]' src="/public/site-img/Banner-2.png" alt="" />
+                        <img className=' h-[290px]  md:h-[625px] mt-[100px]' src="/public/assets/site-img/Banner-2.png" alt="" />
                     </LazyLoad>
                 </div>
             </div>
