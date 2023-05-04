@@ -1,7 +1,7 @@
 .bg-banner-2{
     height: 400px;
     width: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.493), rgba(0, 0, 0, 0.452)), url(/public/assets/site-img/DetailsBanner.jpg)  ;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.493), rgba(0, 0, 0, 0.452)), url(/assets/site-img/DetailsBanner.jpg)  ;
     background-position: center ;
     background-repeat: no-repeat;
     background-size: cover;

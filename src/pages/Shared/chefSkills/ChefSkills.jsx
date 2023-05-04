@@ -5,7 +5,7 @@ const ChefSkills = () => {
         <div>
             <div className='grid grid-cols-1 md:grid-cols-2 mx-auto'>
                 <div>
-                    <img src="/public/assets/site-img/banner-img.png" alt="" />
+                    <img src="/assets/site-img/banner-img.png" alt="" />
                 </div>
                 <div className='my-auto'>
                     <h2 className='text-2xl font-semibold text-yellow-500'>Technical Skills:</h2>
